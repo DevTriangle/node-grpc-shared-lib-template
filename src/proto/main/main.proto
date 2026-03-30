@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "common/common.proto";
+
+package main;
+
+service NotificationAppService {
+  rpc GetStatus (common.Empty) returns (common.StatusResponse) {}
+}
