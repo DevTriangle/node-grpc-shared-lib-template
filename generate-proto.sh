@@ -1,7 +1,7 @@
 #!/bin/bash
 
-PROTO_ROOT="./src/proto"
-OUT_DIR="./src/interfaces/proto"
+PROTO_ROOT="./proto"
+OUT_DIR="./interfaces"
 GOOGLE_PROTO_PATH="C:/Users/alber/AppData/Local/Microsoft/WinGet/Packages/Google.Protobuf_Microsoft.Winget.Source_8wekyb3d8bbwe/include"
 
 # Create output directory
@@ -13,8 +13,6 @@ PLUGIN_PATH=$(cd node_modules/.bin && pwd -W)/protoc-gen-ts_proto.cmd
 for dir in "$PROTO_ROOT"/*/; do
   if [ -d "$dir" ]; then
     subdir=$(basename "$dir")
-    PROTO_OUT="$OUT_DIR/$subdir"
-    mkdir -p "$PROTO_OUT"
 
     if ls "$dir"*.proto 2>/dev/null | grep -q .; then
       protoc \
@@ -29,7 +27,7 @@ for dir in "$PROTO_ROOT"/*/; do
         --ts_proto_opt=outputEncodeMethods=false \
         --ts_proto_opt=addNestjsRestParameter=true \
         --proto_path="$GOOGLE_PROTO_PATH"\
-        --proto_path="$PROTO_ROOT" \
+        --proto_path="." \
         "$dir"*.proto
     fi
   fi
