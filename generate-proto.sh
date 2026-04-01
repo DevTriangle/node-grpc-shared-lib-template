@@ -1,7 +1,7 @@
 #!/bin/bash
 
-PROTO_ROOT="./proto"
-OUT_DIR="./interfaces"
+PROTO_ROOT="./src/proto"
+OUT_DIR="./src/interfaces"
 GOOGLE_PROTO_PATH="C:/Users/alber/AppData/Local/Microsoft/WinGet/Packages/Google.Protobuf_Microsoft.Winget.Source_8wekyb3d8bbwe/include"
 
 # Create output directory
@@ -27,7 +27,7 @@ for dir in "$PROTO_ROOT"/*/; do
         --ts_proto_opt=outputEncodeMethods=false \
         --ts_proto_opt=addNestjsRestParameter=true \
         --proto_path="$GOOGLE_PROTO_PATH"\
-        --proto_path="." \
+        --proto_path="$PROTO_ROOT" \
         "$dir"*.proto
     fi
   fi
