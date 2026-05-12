@@ -18,6 +18,12 @@
 npm run proto:generate
 ```
 
+## Подключение к сервису
+
+```bash
+git submodule add <git@github ...> src/libs/<name>
+```
+
 ## Примеры файлов
 
 `filter.proto`
