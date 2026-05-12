@@ -9,6 +9,8 @@
   - `model.proto` - модели entity БД и response;
   - `service.proto` - объявление RPC-сервиса (API-эндпоинтов).
 - `src/generated` - сгенерированные интерфейсы и классы для использования в NestJS.
+- `src/classes` - DTO с валидацией для использования в NestJS.
+- `src/constants` - константные значения.
 
 ### Генерация файлов
 
