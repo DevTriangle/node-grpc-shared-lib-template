@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package common;
+
+// Пустой объект
+message Empty {}
+
+// Статус
+message StatusResponse {
+  bool status = 1; // Статус true/false
+}
+
+// Пагинация
+message PaginationResponse {
+  int32 count = 1; // Кол-во объектов всего
+}
+
+// DTO для пагинации
+message FilterOffset {
+  optional int32 count = 1; // Кол-во объектов на странице
+  optional int32 page = 2; // Номер страницы (с 1)
+}
+
+// ENUM направлений сортировки
+enum SortOrders {
+  ASC = 0; // Сортировка по возрастанию
+  DESC = 1; // Сортировка по убыванию
+}
+
+// Поиск по int ID
+message FindIntUniqueRequest {
+  int32 _id = 1; // int ID для поиска
+}
+
+// Поиск по string ID
+message FindUniqueRequest {
+  string _id = 1; // string ID для поиска
+}

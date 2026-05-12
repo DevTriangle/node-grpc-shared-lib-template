@@ -4,6 +4,6 @@ import "common/common.proto";
 
 package main;
 
-service NotificationAppService {
+service ExampleAppService {
   rpc GetStatus (common.Empty) returns (common.StatusResponse) {}
 }

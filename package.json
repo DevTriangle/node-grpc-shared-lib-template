@@ -7,6 +7,9 @@
   "author": "",
   "license": "ISC",
   "type": "commonjs",
+  "scripts": {
+    "proto:generate": "cd src && rimraf generated && cd proto && buf generate"
+  },
   "devDependencies": {
     "@nestjs/common": "^11.1.3",
     "@nestjs/swagger": "^11.2.0",

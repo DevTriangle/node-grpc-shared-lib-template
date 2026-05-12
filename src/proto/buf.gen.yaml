@@ -1,0 +1,16 @@
+version: v1
+plugins:
+  - name: ts
+    out: ../generated
+    strategy: all
+    path: protoc-gen-ts_proto
+    opt:
+      - nestJs=true
+      - addGrpcMetadata=true
+      - snakeToCamel=false
+      - useDate=true
+      - stringEnums=true
+      - unrecognizedEnum=false
+      - outputEncodeMethods=false
+      - addNestjsRestParameter=true
+      - customType=ObjectId=string|ObjectId
