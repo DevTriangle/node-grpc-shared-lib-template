@@ -4,6 +4,8 @@ import "common/model.proto";
 
 package main;
 
-service ExampleAppService {
+// Сервис App
+service FileAppService {
+  // Получение статуса сервиса
   rpc GetStatus (common.Empty) returns (common.StatusResponse) {}
 }

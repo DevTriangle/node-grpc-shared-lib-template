@@ -8,6 +8,8 @@ message Empty {}
 // Статус
 message StatusResponse {
   bool status = 1; // Статус true/false
+  optional string message = 2; // Сообщение
+  optional string id = 3; // ID объекта
 }
 
 // Пагинация
@@ -35,4 +37,10 @@ message FindIntUniqueRequest {
 // Поиск по string ID
 message FindUniqueRequest {
   string _id = 1; // string ID для поиска
+}
+
+// Объекты
+message ObjectsRequest {
+  int32 entity_id = 1; // ID сущности
+  string object_uuid = 2; // UUID объекта
 }
